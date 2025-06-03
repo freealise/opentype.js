@@ -39,7 +39,7 @@
     const form = document.forms.demo;
     const fontFileName = 'fonts/FiraSansMedium.woff';
     const npm = await fetch('https://api.cdnjs.com/libraries/opentype.js').then(r => r.json());
-    const git_option = el('option', { innerText: 'local', value: '/dist/opentype.js' });
+    const git_option = el('option', { innerText: 'local', value: '/opentype.js/dist/opentype.js' });
     const local_option = el('option', { innerText: 'master', value: 'https://opentype.js.org/dist/opentype.js' });
     const cdn_options = npm.versions.map(v => el('option', { innerText: v, value: `https://unpkg.com/opentype.js@${v}/dist/opentype.js` })).reverse();
     form.base.replaceChildren(git_option, ...cdn_options);
